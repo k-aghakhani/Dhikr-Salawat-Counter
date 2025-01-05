@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.dhikr_salawat_counter"
+    namespace = "com.aghakhani.dhikr_salawat_counter"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.dhikr_salawat_counter"
+        applicationId = "com.aghakhani.dhikr_salawat_counter"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
