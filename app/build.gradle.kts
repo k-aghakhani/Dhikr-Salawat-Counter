@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.dhikr_salawat_counter"
-        minSdk = 19
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
