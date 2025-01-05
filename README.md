@@ -1,4 +1,4 @@
-Salawat & Dhikr Counter
+Salawat & Dhikr Counter :
 A simple and elegant Android application to help Muslims track their Salawat and Dhikr with ease and convenience.
 
 📖 About
@@ -19,7 +19,7 @@ Installation
 Clone this repository:
 bash
 Copy code
-git clone https://github.com/yourusername/SalawatCounter.git  
+git clone [https://github.com/k-aghakhani/Dhikr-Salawat-Counter.git]
 Open the project in Android Studio.
 Build and run the app on an emulator or a physical Android device.
 
