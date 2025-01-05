@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Dhikr-Salawat-Counter</string>
+    <string name="Salawat">اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ</string>
+    <string name="SubhanAllah">سُبْحَانَ اللَّهِ</string>
+    <string name="Alhamdulillah">الْحَمْدُ لِلَّهِ</string>
+    <string name="AllahuAkbar">اللَّهُ أَكْبَرُ</string>
+    <string name="Lailahaillallah">لَا إِلٰهَ إِلَّا اللَّهُ</string>
+    <string name="Astaghfirullah">أَسْتَغْفِرُ اللَّهَ</string>
+    <string name="Lahawlawala">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ</string>
+    <string name="progress_saved">Your Dhikr count has been successfully saved.</string>
+
 </resources>

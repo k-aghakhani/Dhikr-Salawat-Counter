@@ -2,80 +2,119 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:id="@+id/main"
-    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <!-- Dropdown or Title -->
-    <TextView
+    <!--<TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"
-        android:text="Select Dhikr"
-        android:textSize="18sp"
-        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
         android:drawableRight="@drawable/ic_dropdown_arrow"
         android:gravity="center"
-        android:padding="8dp" />
+        android:padding="8dp"
+        android:text="Select Dhikr"
+        android:textColor="@color/black"
+        android:textSize="18sp" />-->
+
+    <RelativeLayout
+        android:id="@+id/r_spinner_dhikr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp">
+
+        <!-- اسپینر -->
+        <Spinner
+            android:id="@+id/spinner_dhikr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/spinner_background"
+            android:padding="8dp"
+            android:spinnerMode="dropdown"
+            android:gravity="center" />
+
+        <!-- آیکون پیکان -->
+        <ImageView
+            android:id="@+id/arrow_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_dropdown_arrow"
+            android:contentDescription="Arrow Icon"
+            android:layout_toEndOf="@id/spinner_dhikr" />
+    </RelativeLayout>
+
 
     <!-- Counter Display -->
     <TextView
         android:id="@+id/tv_counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_title"
+        android:layout_below="@id/r_spinner_dhikr"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="44dp"
+        android:animation="@anim/scale_up"
+        android:fontFamily="@font/oswaldbold"
+        android:gravity="center"
+        android:shadowColor="#88000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
         android:text="0"
-        android:textSize="60sp"
         android:textColor="@color/black"
-        android:gravity="center" />
+        android:textSize="80sp" />
+
 
     <!-- Add Count Button -->
     <Button
         android:id="@+id/btn_count"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_below="@id/tv_counter"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_button"
         android:text="+"
-        android:textSize="24sp"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="34sp" />
 
     <!-- Reset Button -->
     <Button
         android:id="@+id/btn_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_navigation"
         android:layout_alignParentStart="true"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_above="@id/bottom_navigation"
         android:backgroundTint="@color/gray"
         android:text="Reset"
-        android:textSize="16sp"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
     <!-- Save Progress Button -->
     <Button
         android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_navigation"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_above="@id/bottom_navigation"
         android:backgroundTint="@color/green"
         android:text="Save"
-        android:textSize="16sp"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
     <!-- Bottom Navigation Bar -->
     <LinearLayout
@@ -83,35 +122,35 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="@color/light_gray">
+        android:background="@color/light_gray"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/nav_home"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_home"
             android:background="?attr/selectableItemBackground"
-            android:contentDescription="Home" />
+            android:contentDescription="Home"
+            android:src="@drawable/ic_home" />
 
         <ImageButton
             android:id="@+id/nav_add"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_add"
             android:background="?attr/selectableItemBackground"
-            android:contentDescription="Add Dhikr" />
+            android:contentDescription="Add Dhikr"
+            android:src="@drawable/ic_add" />
 
         <ImageButton
             android:id="@+id/nav_settings"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_settings"
             android:background="?attr/selectableItemBackground"
-            android:contentDescription="Settings" />
+            android:contentDescription="Settings"
+            android:src="@drawable/ic_settings" />
 
     </LinearLayout>
 </RelativeLayout>
