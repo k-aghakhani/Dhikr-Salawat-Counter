@@ -27,7 +27,8 @@
             android:background="@drawable/spinner_background"
             android:gravity="center"
             android:padding="8dp"
-            android:spinnerMode="dropdown" />
+            android:spinnerMode="dropdown"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <!-- Arrow icon -->
         <ImageView
@@ -66,8 +67,8 @@
     <!-- Add Count Button -->
     <Button
         android:id="@+id/btn_count"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/rounded_button"
@@ -140,4 +141,10 @@
             android:src="@drawable/ic_settings" />
 
     </LinearLayout>
+
+
 </RelativeLayout>
+
+
+
+
