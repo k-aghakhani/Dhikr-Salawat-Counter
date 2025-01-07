@@ -5,6 +5,7 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowDisablePreview">true</item> <!--remove app icon and white screen-->
     </style>
 
 
