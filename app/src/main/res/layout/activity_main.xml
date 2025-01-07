@@ -138,7 +138,7 @@
             android:layout_weight="1"
             android:background="?attr/selectableItemBackground"
             android:contentDescription="Settings"
-            android:src="@drawable/ic_settings" />
+            android:src="@drawable/ic_contact" />
 
     </LinearLayout>
 
