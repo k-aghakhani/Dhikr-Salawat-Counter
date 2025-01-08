@@ -8,5 +8,8 @@
     <string name="Astaghfirullah">أَسْتَغْفِرُ اللَّهَ</string>
     <string name="Lahawlawala">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ</string>
     <string name="progress_saved">Your Dhikr count has been successfully saved.</string>
+    <string name="invalid_or_duplicate_dhikr">Invalid or duplicate Dhikr</string>
+    <string name="dhikr_added">Dhikr added!</string>
+    <string name="dhikr_removed">Dhikr removed!</string>
 
 </resources>
