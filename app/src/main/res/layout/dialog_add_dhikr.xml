@@ -23,7 +23,9 @@
         android:visibility="gone" />
     <Button
         android:id="@+id/btn_add_dhikr"
+        android:backgroundTint="@color/green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Dhikr" />
+        android:textColor="@color/white"
+        android:text="Add Dhikr"/>
 </LinearLayout>
