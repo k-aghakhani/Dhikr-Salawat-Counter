@@ -21,12 +21,13 @@
         android:id="@+id/et_dhikr_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter new Dhikr"
-        android:padding="12dp"
         android:background="@drawable/input_background"
+        android:hint="Enter new Dhikr"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="12dp"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        android:inputType="text" />
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btn_add_dhikr"
