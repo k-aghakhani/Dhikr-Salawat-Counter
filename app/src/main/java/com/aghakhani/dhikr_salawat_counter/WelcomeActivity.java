@@ -46,7 +46,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 11000); // 11 seconds
+        }, 10); // 11 seconds
 
         // Adjust the padding of the main view to account for system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

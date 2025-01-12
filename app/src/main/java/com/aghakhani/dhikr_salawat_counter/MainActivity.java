@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             public View getDropDownView(int position, View convertView, ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 ((TextView) view).setGravity(Gravity.CENTER); // Center align dropdown items
-                view.setPadding(0, 20, 0, 20); // Add vertical padding between dropdown items
+                view.setPadding(30, 20, 30, 20); // Add vertical padding between dropdown items
                 return view;
             }
         };
