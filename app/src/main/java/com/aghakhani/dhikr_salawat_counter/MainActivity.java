@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getString(R.string.Lahawlawala),
                 getResources().getString(R.string.Salawat),
         };
+
 
         // Handle system bars insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -118,13 +120,34 @@ public class MainActivity extends AppCompatActivity {
             tvCounter.setText(String.valueOf(counter));
         });
 
+
+        LayoutInflater inflater = getLayoutInflater();
+        View customToastLayout = inflater.inflate(R.layout.custom_toast, null); // null به جای ViewGroup
+
+        // Set the text and image inside the Toast
+        TextView toastMessage = customToastLayout.findViewById(R.id.toast_message);
+        //  ImageView toastIcon = customToastLayout.findViewById(R.id.toast_icon);
+
+
         // Handle save button click to save counter value for selected Dhikr
         btnSave.setOnClickListener(v -> {
             String selectedDhikr = spinnerDhikr.getSelectedItem().toString();
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt(selectedDhikr, counter);
             editor.apply();
-            Toast.makeText(MainActivity.this, getString(R.string.progress_saved), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, getString(R.string.progress_saved), Toast.LENGTH_SHORT).show();
+            toastMessage.setText(getString(R.string.progress_saved));
+
+            //  toastMessage.setText("test");
+            //  toastIcon.setImageResource(R.drawable.ic_info);
+
+            // Create and display Toast
+            Toast customToast = new Toast(getApplicationContext());
+            customToast.setDuration(Toast.LENGTH_LONG);
+            customToast.setView(customToastLayout);
+            customToast.show();
+
+
         });
 
         // Initialize settings button
