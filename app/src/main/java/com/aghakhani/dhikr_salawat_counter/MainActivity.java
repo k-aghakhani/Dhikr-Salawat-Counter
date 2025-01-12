@@ -121,14 +121,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        LayoutInflater inflater = getLayoutInflater();
-        View customToastLayout = inflater.inflate(R.layout.custom_toast, null); // null به جای ViewGroup
-
-        // Set the text and image inside the Toast
-        TextView toastMessage = customToastLayout.findViewById(R.id.toast_message);
-        //  ImageView toastIcon = customToastLayout.findViewById(R.id.toast_icon);
-
-
         // Handle save button click to save counter value for selected Dhikr
         btnSave.setOnClickListener(v -> {
             String selectedDhikr = spinnerDhikr.getSelectedItem().toString();
@@ -136,17 +128,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putInt(selectedDhikr, counter);
             editor.apply();
             //Toast.makeText(MainActivity.this, getString(R.string.progress_saved), Toast.LENGTH_SHORT).show();
-            toastMessage.setText(getString(R.string.progress_saved));
-
-            //  toastMessage.setText("test");
-            //  toastIcon.setImageResource(R.drawable.ic_info);
-
-            // Create and display Toast
-            Toast customToast = new Toast(getApplicationContext());
-            customToast.setDuration(Toast.LENGTH_LONG);
-            customToast.setView(customToastLayout);
-            customToast.show();
-
+            custom_toast(getString(R.string.progress_saved));
 
         });
 
@@ -178,9 +160,11 @@ public class MainActivity extends AppCompatActivity {
                 dhikrList.add(newDhikr);
                 adapter.notifyDataSetChanged();
                 spinnerDhikr.setSelection(dhikrList.indexOf(newDhikr));
-                Toast.makeText(this, getString(R.string.dhikr_added), Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(this, getString(R.string.dhikr_added), Toast.LENGTH_SHORT).show();
+                custom_toast(getString(R.string.dhikr_added));
             } else {
-                Toast.makeText(this, getString(R.string.invalid_or_duplicate_dhikr), Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(this, getString(R.string.invalid_or_duplicate_dhikr), Toast.LENGTH_SHORT).show();
+                custom_toast(getString(R.string.invalid_or_duplicate_dhikr));
             }
             dialog.dismiss();
         });
@@ -190,7 +174,8 @@ public class MainActivity extends AppCompatActivity {
                 dhikrList.remove(selectedDhikr);
                 adapter.notifyDataSetChanged();
                 spinnerDhikr.setSelection(0);
-                Toast.makeText(this, getString(R.string.dhikr_removed), Toast.LENGTH_SHORT).show();
+                //   Toast.makeText(this, getString(R.string.dhikr_removed), Toast.LENGTH_SHORT).show();
+                custom_toast(getString(R.string.dhikr_removed));
             }
             dialog.dismiss();
         });
@@ -211,5 +196,21 @@ public class MainActivity extends AppCompatActivity {
         String selectedDhikr = spinnerDhikr.getSelectedItem().toString();
         counter = sharedPreferences.getInt(selectedDhikr, 0);
         tvCounter.setText(String.valueOf(counter));
+    }
+
+    private void custom_toast(String s) {
+        LayoutInflater inflater = getLayoutInflater();
+        View customToastLayout = inflater.inflate(R.layout.custom_toast, null);
+        // Set the text and image inside the Toast
+        TextView toastMessage = customToastLayout.findViewById(R.id.toast_message);
+        //  ImageView toastIcon = customToastLayout.findViewById(R.id.toast_icon);
+        toastMessage.setText(s);
+        //  toastIcon.setImageResource(R.drawable.ic_info);
+        // Create and display Toast
+        Toast customToast = new Toast(getApplicationContext());
+        customToast.setDuration(Toast.LENGTH_LONG);
+        customToast.setView(customToastLayout);
+        customToast.show();
+
     }
 }
