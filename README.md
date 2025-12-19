@@ -91,3 +91,5 @@ I am an experienced Android developer with expertise in Java and Kotlin, primari
 ---
 
 Thank you for using and contributing to the Salawat & Dhikr Counter app! 🙏
+
+Made with ❤️ and ☕
